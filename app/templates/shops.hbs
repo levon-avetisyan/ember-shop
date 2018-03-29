@@ -1,0 +1,35 @@
+<div class="container">
+    <div class="main-content">
+        <div class="page-header">
+            <h1>Shops</h1>
+        </div>
+        <div class="list-wrapper">
+            <ul class="list-group shops">
+                {{#each model as |shop|}}
+                    <li class="list-group-item">
+                        {{#shop-list-item shop=shop}}{{/shop-list-item}}
+                    </li>
+                {{/each}}
+                {{#if addingShop}}
+                    <li class="list-group-item">
+                        <div class="list-item-content">
+                            <span class="list-item-name">
+                                {{input value=newShopName class="form-control" placeholder="Name"}}
+                            </span>
+                            <span class="list-item-actions">
+                                {{#if startAddShop}}
+                                    <button class="btn-shops btn-shops-primary" {{action 'addShop'}}>ADD</button>
+                                    <button class="btn-shops btn-shops-secondary" {{action 'cancelAddingProduct'}}>CANCEL</button>
+                                {{/if}}
+                            </span>
+                            <div class="clear"></div>
+                        </div>
+                    </li>
+                {{/if}}
+            </ul>
+        </div>
+        <div class="shop-action-add">
+            <button class="btn-shops btn-shops-add" {{action 'startAddShop'}}>Add a shop</button>
+        </div>
+    </div>
+</div>

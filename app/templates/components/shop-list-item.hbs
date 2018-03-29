@@ -1,0 +1,25 @@
+<div class="list-item-content">
+    <span class="list-item-name">
+        {{#if isEditing}}
+          {{input value=shopName class="form-control" placeholder="Name"}}
+        {{else}}
+          {{#link-to "shop" shop.id}}
+            {{shop.name}}
+          {{/link-to}}
+        {{/if}}
+    </span>
+    <span class="list-item-actions">
+         {{#if isEditing}}
+            <button class="btn-shops btn-shops-primary" {{action 'save'}}>SAVE</button>
+         {{else}}
+            <button class="btn-shops btn-shops-primary" {{action 'edit'}}>EDIT</button>
+        {{/if}}
+
+        {{#if isEditing}}
+            <button class="btn-shops btn-shops-secondary" {{action 'cancel'}}>CANCEL</button>
+        {{else}}
+            <button class="btn-shops btn-shops-danger" {{action 'deleteRecord' shop}}>DELETE</button>
+        {{/if}}
+    </span>
+    <div class="clear"></div>
+</div>

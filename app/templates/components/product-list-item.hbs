@@ -1,0 +1,40 @@
+<tr>
+    <td class="product-name">
+        {{#if isEditingProduct}}
+            {{input value=productName class="form-control" placeholder="Name"}}
+        {{else}}
+            <p>{{product.name}}</p>
+        {{/if}}
+    </td>
+    <td class="product-qty text-center">
+        {{#if isEditingProduct}}
+            {{input value=productQuantity type="number" class="form-control" placeholder="Quantity"}}
+        {{else}}
+            <p>{{product.quantity}}</p>
+        {{/if}}
+    </td>
+    <td class="product-price text-center">
+        {{#if isEditingProduct}}
+            {{input value=productPrice type="number" class="form-control" placeholder="Price"}}
+        {{else}}
+            <p>{{product.price}}</p>
+        {{/if}}
+    </td>
+    <td class="product-item-actions-wrapper">
+        <div class="product-item-actions">
+            {{#if isEditingProduct}}
+                <button class="btn-shops btn-shops-primary" {{action 'saveProduct'}}>
+                    <span class="glyphicon glyphicon glyphicon-floppy-disk"></span>
+                </button>
+                <button class="btn-shops btn-shops-secondary" {{action 'cancelEditingProduct'}}>
+                    <span class="glyphicon glyphicon-remove"></span>
+                </button>
+            {{else}}
+                <button class="btn-shops btn-shops-primary" {{action 'editProduct'}}><span class="glyphicon glyphicon-pencil"></span></button>
+                <button class="btn-shops btn-shops-danger" {{action 'deleteProductRecord' product}}><span class="glyphicon glyphicon-trash"></span></button>
+            {{/if}}
+        </div>
+    </td>
+</tr>
+
+

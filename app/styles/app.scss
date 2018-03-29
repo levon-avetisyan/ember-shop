@@ -1,0 +1,229 @@
+@import "ember-bootstrap/bootstrap";
+
+body * {
+  font-family: 'Roboto', sans-serif;
+}
+
+.main-content {
+  max-width: 836px;
+  margin: 0 auto;
+}
+
+.list-wrapper {
+  border: 2px dotted #b7b7b7;
+  border-radius: 4px;
+  background-color: #f5f5f5;
+  padding: 30px 36px;
+  margin-bottom: 30px;
+}
+
+.list-group.shops {
+  margin-bottom: 0;
+  .list-group-item {
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 2px solid #eaeaea;
+    background-color: transparent;
+    padding: 0;
+    a {
+      color: #9d9d9d;
+      line-height: 40px;
+      text-decoration: none;
+    }
+  }
+}
+
+.page-header {
+  border-bottom: none;
+  h1 {
+    font-weight: 300;
+    text-align: center;
+    text-transform: uppercase;
+    span{
+      text-transform: none;
+    }
+  }
+}
+
+.clear {
+  clear: both;
+  display: block;
+}
+
+.list-group-item {
+  position: relative;
+  transition: all 1.0s ease-in;
+  .list-item-content {
+    height: 42px;
+    .list-item-actions {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+      .btn-shops + .btn-shops {
+        margin-left: 4px;
+      }
+    }
+    .list-item-name {
+      input.form-control {
+        width: auto;
+        display: inline-block;
+        margin-top: 4px;
+      }
+    }
+  }
+}
+input.form-control {
+ border-radius: 0;
+  border: none;
+  &:focus{
+    outline: none;
+    box-shadow: none;
+  }
+}
+.list-item-name {
+  display: inline-block;
+  p {
+    margin-bottom: 0;
+  }
+}
+
+.btn-shops {
+  border-radius: 0;
+  color: white;
+  border: none;
+  transition: all .2s ease-in;
+  &:focus {
+    outline: none;
+    box-shadow: none;
+  }
+  &.btn-shops-primary,
+  &.btn-shops-secondary,
+  &.btn-shops-danger {
+    width: 80px;
+    height: 30px;
+  }
+  &.btn-shops-secondary {
+    background-color: #c9c9c9;
+    &:hover{
+      background-color: #9e9e9e;
+    }
+  }
+  &.btn-shops-primary {
+    background-color: #51c972;
+    &:hover {
+      color: white;
+      background-color: #3a9955;
+    }
+  }
+  &.btn-shops-danger {
+    background-color: #e95150;
+    &:hover {
+      background-color: #bf3d3d;
+    }
+  }
+  &.btn-shops-add {
+    height: 45px;
+    width: 220px;
+    background-color: #222222;
+    &:hover {
+      background-color: #4d5058;
+    }
+  }
+}
+
+.product-action-add{
+  width: 640px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.table-wrapper {
+  border: 2px dotted #b7b7b7;
+  border-radius: 4px;
+  margin: 0 auto 30px;
+  display: inline-block;
+  table {
+    width: 640px;
+    background-color: #f5f5f5;
+    thead{
+      border-bottom: 2px dotted #b7b7b7;
+      tr{
+        height: 64px;
+        th{
+          text-align: center;
+          font-size: 17px;
+          font-weight: 400;
+          &+ th {
+            border-left: 2px dotted #b7b7b7;
+          }
+        }
+      }
+    }
+    tbody {
+      tr {
+        position: relative;
+        border-bottom: 2px solid #eaeaea;
+        height: 40px;
+        &:last-child{
+          border-bottom: none;
+        }
+        td{
+          p{
+            margin-bottom: 0;
+          }
+          & + td {
+            border-left: 2px dotted #b7b7b7;
+          }
+          &.product-name {
+            text-align: left;
+            p {
+              padding-left: 30px;
+            }
+          }
+          &.product-item-actions-wrapper{
+            border: none;
+            position: relative;
+            .product-item-actions{
+              position: absolute;
+              top: 50%;
+              right: -94px;
+              transform: translateY(-50%);
+              width: 86px;
+              .btn-shops{
+                width: 30px;
+                height: 30px;
+                &+.btn-shops{
+                  margin-left: 6px;
+                }
+              }
+            }
+          }
+          &.product-total-price{
+            padding-right: 15px;
+            p{
+              text-align: right;
+              &.total-price-label{
+                margin-top: 10px;
+                color: #9d9d9d;
+              }
+              &.total-price{
+                color: #1a1a1a;
+                font-weight: 500;
+                margin-bottom: 10px;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+
+
+
+
+
+@import "ember-bootstrap/bootstrap";

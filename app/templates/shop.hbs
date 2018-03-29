@@ -1,0 +1,54 @@
+<div class="container">
+    <div class="main-content text-center">
+        <div class="page-header">
+            <h1>{{model.name}} <span class="text-muted"><small>Products</small></span></h1>
+        </div>
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                <tr>
+                    <th>NAME</th>
+                    <th>QTY</th>
+                    <th>PRICE</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{#each model.products as |product|}}
+                    {{#product-list-item product=product}}{{/product-list-item}}
+                {{/each}}
+                {{#if addingProduct}}
+                    <tr>
+                        <td class="product-name">{{input value=newProductName type="text" class="form-control"
+                                                         placeholder="Name"}}</td>
+                        <td class="product-qty">{{input value=newProductQuantity type="number" class="form-control"
+                                                        placeholder="Quantity"}}</td>
+                        <td class="product-price">{{input value=newProductPrice type="number" class="form-control"
+                                                          placeholder="Price"}}</td>
+                        <td class="product-item-actions-wrapper">
+                            <div class="product-item-actions">
+                                {{#if startAddProduct}}
+                                    <button class="btn-shops btn-shops-primary" {{action 'addProduct'}}><span
+                                            class="glyphicon glyphicon glyphicon-floppy-disk"></span></button>
+                                    <button class="btn-shops btn-shops-secondary" {{action 'cancelAddingProduct'}}><span
+                                            class="glyphicon glyphicon glyphicon-remove"></span></button>
+                                {{/if}}
+                            </div>
+                        </td>
+                    </tr>
+                {{/if}}
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td class="product-total-price">
+                        <p class="total-price-label">Total Price</p>
+                        <p class="total-price">{{total model.priceAmounts model.qtyAmounts}}</p>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="product-action-add">
+            <button class="btn-shops btn-shops-add" {{action 'startAddProduct'}}>Add Product</button>
+        </div>
+    </div>
+</div>
